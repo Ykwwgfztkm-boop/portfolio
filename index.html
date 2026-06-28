@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>茗 · 个人作品集</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "PingFang SC", sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #e0e0e0;
+    min-height: 100vh;
+  }
+
+  /* ── 导航 ── */
+  nav {
+    display: flex; justify-content: center; gap: 30px;
+    padding: 20px; position: fixed; top: 0; width: 100%;
+    background: rgba(15,12,41,0.85); backdrop-filter: blur(10px);
+    z-index: 100;
+  }
+  nav a { color: #a0a0cc; text-decoration: none; font-size: 0.95em; transition: color 0.3s; }
+  nav a:hover { color: #fff; }
+
+  /* ── 头部 ── */
+  .hero {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 160px 20px 100px;
+  }
+  .hero h1 { font-size: 3.5em; font-weight: 700; letter-spacing: 2px; }
+  .hero h1 span { background: linear-gradient(90deg, #a78bfa, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero .tagline { font-size: 1.2em; color: #888; margin-top: 12px; }
+  .hero .badges { display: flex; gap: 12px; margin-top: 25px; flex-wrap: wrap; justify-content: center; }
+  .badge {
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+    padding: 8px 18px; border-radius: 20px; font-size: 0.9em;
+  }
+
+  /* ── 通用区块 ── */
+  section { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
+  h2 { font-size: 2em; margin-bottom: 30px; color: #fff; }
+  h2::after { content: ''; display: block; width: 50px; height: 3px; background: #a78bfa; margin-top: 10px; border-radius: 2px; }
+
+  /* ── 关于 ── */
+  .about p { font-size: 1.1em; line-height: 1.9; color: #bbb; }
+
+  /* ── 技能 ── */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .skill-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px; padding: 24px; text-align: center; transition: transform 0.2s;
+  }
+  .skill-card:hover { transform: translateY(-4px); border-color: #a78bfa; }
+  .skill-card .icon { font-size: 2em; margin-bottom: 8px; }
+  .skill-card h3 { font-size: 1em; color: #ddd; }
+
+  /* ── 项目 ── */
+  .projects { display: flex; flex-direction: column; gap: 20px; }
+  .project-card {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px; padding: 30px; transition: border-color 0.3s;
+  }
+  .project-card:hover { border-color: #60a5fa; }
+  .project-card h3 { font-size: 1.4em; color: #fff; margin-bottom: 6px; }
+  .project-card .desc { color: #999; margin-bottom: 12px; line-height: 1.7; }
+  .project-card .stack { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+  .project-card .stack span {
+    background: rgba(167,139,250,0.15); color: #a78bfa;
+    padding: 3px 10px; border-radius: 10px; font-size: 0.8em;
+  }
+  .project-card a {
+    color: #60a5fa; text-decoration: none; font-size: 0.9em; border-bottom: 1px solid transparent; transition: border-color 0.3s;
+  }
+  .project-card a:hover { border-color: #60a5fa; }
+
+  /* ── 页脚 ── */
+  footer { text-align: center; padding: 60px 20px; color: #555; font-size: 0.9em; }
+  footer a { color: #a78bfa; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#about">关于</a>
+  <a href="#skills">技能</a>
+  <a href="#projects">项目</a>
+  <a href="https://github.com/Ykwwgfztkm-boop" target="_blank">GitHub</a>
+</nav>
+
+<div class="hero">
+  <h1>👋 你好，我是<span>茗</span></h1>
+  <p class="tagline">全栈开发学习者 · 2026 高考生 · 正在路上</p>
+  <div class="badges">
+    <span class="badge">🎓 四川自贡</span>
+    <span class="badge">💻 Node.js 全栈</span>
+    <span class="badge">🌟 永远好奇</span>
+  </div>
+</div>
+
+<section id="about">
+  <h2>关于我</h2>
+  <p>
+    我叫廖艺茗，来自四川自贡，刚刚完成高考。<br><br>
+    正在系统学习全栈 Web 开发，从命令行到数据库，从页面设计到服务器部署。
+    喜欢把想法变成能运行的东西。目前已经完成了两个全栈项目，
+    接下来还想探索更多：小程序、自动化工具、AI 应用……
+  </p>
+</section>
+
+<section id="skills">
+  <h2>技能栈</h2>
+  <div class="skills">
+    <div class="skill-card"><div class="icon">📄</div><h3>HTML / CSS</h3></div>
+    <div class="skill-card"><div class="icon">⚡</div><h3>JavaScript</h3></div>
+    <div class="skill-card"><div class="icon">🔧</div><h3>Node.js + Express</h3></div>
+    <div class="skill-card"><div class="icon">🗄️</div><h3>SQLite</h3></div>
+    <div class="skill-card"><div class="icon">🔄</div><h3>Git + GitHub</h3></div>
+    <div class="skill-card"><div class="icon">🚀</div><h3>部署上线</h3></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>项目</h2>
+  <div class="projects">
+
+    <div class="project-card">
+      <h3>🍔 今天吃什么</h3>
+      <p class="desc">3D 食物选择器，带用户系统。登录后可收藏喜欢的食物、查看转盘历史记录，还能生成分享链接发给朋友。</p>
+      <div class="stack">
+        <span>Three.js</span><span>Express</span><span>SQLite</span><span>JWT</span>
+      </div>
+      <a href="https://github.com/Ykwwgfztkm-boop/what-to-eat" target="_blank">GitHub 仓库 →</a>
+    </div>
+
+    <div class="project-card">
+      <h3>📝 个人博客</h3>
+      <p class="desc">全栈博客系统，支持写文章、编辑、删除、标签分类。带深色模式，已部署到公网。</p>
+      <div class="stack">
+        <span>Express</span><span>SQLite</span><span>原生 JS</span>
+      </div>
+      <a href="https://github.com/Ykwwgfztkm-boop/my-blog" target="_blank">GitHub 仓库 →</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 茗 · 由 <a href="https://github.com/Ykwwgfztkm-boop" target="_blank">GitHub</a> 托管
+</footer>
+
+</body>
+</html>
